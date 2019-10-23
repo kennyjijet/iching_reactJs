@@ -1,7 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+//import logo from './logo.svg';
 import './App.css';
+import Home from './views/Home'
+import Navigation from './components/Navigation'
 
+
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+
+/*
 function App() {
   return (
     <div className="App">
@@ -22,5 +31,25 @@ function App() {
     </div>
   );
 }
+<Route path="/passenger" component={Passenger} />
+export default App;
+*/
 
+
+class App extends Component {
+  constructor(props) {
+    super();
+    this.state = {}
+  }
+
+  render() {
+    return (
+      <Router>
+        <Navigation />
+        <Route exact path="/" component={Home} />
+      </Router>
+
+    );
+  }
+}
 export default App;
